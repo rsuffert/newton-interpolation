@@ -71,9 +71,11 @@ public class NewtonPolynomial {
     /**
      * Evaluates the Newton's polynomial for a given {@code x}.
      * @param x the value for which the Newton's polynomial will be calculated.
-     * @return the result of the polynomial for {@code x}; that is, {@code p(x)}.
+     * @return the result of the polynomial for {@code x} (that is, {@code p(x)}), or {@code null} if {@code isEmpty()} is {@code true}.
      */
-    public double evaluate(double x) {
+    public Double evaluate(double x) {
+        if (this.isEmpty()) return null;
+
         double result = dividedDifferences[0][0];
         
         for (int i=1; i<points.length; i++) {

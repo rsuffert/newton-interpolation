@@ -31,6 +31,10 @@ public class App {
                         System.err.println("[ERROR] Value for evaluation must be numeric");
                         continue;
                     }
+                    if (np.isEmpty()) {
+                        System.err.println("[ERROR] The polynomial is empty");
+                        continue;
+                    }
                     System.out.printf("p(%f) = %f\n", val, np.evaluate(val));
                     break;
                 case "add":
@@ -61,6 +65,13 @@ public class App {
                         continue;
                     }
                     np = new NewtonPolynomial();
+                    break;
+                case "empty":
+                    if (terms.length != 1) {
+                        System.err.println("Usage: empty");
+                        continue;
+                    }
+                    System.out.println(np.isEmpty());
                     break;
                 default:
                     System.err.printf("Invalid command: '%s'\n", terms[0]);

@@ -15,4 +15,5 @@ You may also run the `App` class to interactively build and evaluate your polyno
 - `eval <x-value-to-evaluate>`: evaluates `p(x)` using the current polynomial;
 - `clear`: clears the console;
 - `delete`: resests the polynomial by removing all points from it;
+- `empty`: returns whether or not the polynomial is empty (that is, has no points in it);
 - `exit`: terminates the interactive session.
