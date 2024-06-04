@@ -5,7 +5,7 @@ import java.util.Arrays;
  * For visualizing the polynomial, simply print the object of this class.
  * @author Ricardo B. Süffert.
  */
-public class NewtonInterpolation {
+public class NewtonPolynomial {
     private Point[] points; // the points currently considered for the interpolation
     private double[][] dividedDifferences; // the divided differences table/matrix
 
@@ -13,7 +13,7 @@ public class NewtonInterpolation {
      * CONSTRUCTOR.
      * @param points the list of points to be taken into consideration in the initial Newton's polynomial.
      */
-    public NewtonInterpolation(Point[] points) {
+    public NewtonPolynomial(Point[] points) {
         this.points = points;
         this.dividedDifferences = new double[points.length][points.length];
         calculateDividedDifferences();
