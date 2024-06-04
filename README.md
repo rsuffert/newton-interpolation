@@ -14,4 +14,5 @@ You may also run the `App` class to interactively build and evaluate your polyno
 - `print`: prints the currently built polynomial;
 - `eval <x-value-to-evaluate>`: evaluates `p(x)` using the current polynomial;
 - `clear`: clears the console;
-- `delete`: resests the polynomial by removing all points from it.
+- `delete`: resests the polynomial by removing all points from it;
+- `exit`: terminates the interactive session.
