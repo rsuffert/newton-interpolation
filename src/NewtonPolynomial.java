@@ -20,6 +20,14 @@ public class NewtonPolynomial {
     }
 
     /**
+     * CONSTRUCTOR.
+     */
+    public NewtonPolynomial() {
+        this.points = new Point[]{};
+        this.dividedDifferences = new double[points.length][points.length];
+    }
+
+    /**
      * Calculates the divided differences matrix, where the first row contains the coefficients of the Newton's polynomial.
      */
     private void calculateDividedDifferences() {
@@ -78,10 +86,20 @@ public class NewtonPolynomial {
         return result;
     }
 
+    /**
+     * Tells whether or not this polynomial is empty (i.e., no points have been added to it).
+     * @return {@code true} if the polynomial is empty; {@code false} if not.
+     */
+    public boolean isEmpty() {
+        return points.length == 0;
+    }
+
     @Override
     public String toString() {
+        if (this.isEmpty()) return "";
+
         StringBuilder polynomial = new StringBuilder();
-        polynomial.append(dividedDifferences[0][0]);
+        polynomial.append("p(x) = ").append(dividedDifferences[0][0]);
 
         for (int i=1; i<points.length; i++) {
             if (dividedDifferences[0][i] != 0) {
