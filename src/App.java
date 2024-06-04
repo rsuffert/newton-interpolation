@@ -26,7 +26,11 @@ public class App {
                         System.err.println("Usage: eval <x-value-to-evaluate>");
                         continue;
                     }
-                    double val = safeParseDouble(terms[1]);
+                    Double val = safeParseDouble(terms[1]);
+                    if (val == null) {
+                        System.err.println("[ERROR] Value for evaluation must be numeric");
+                        continue;
+                    }
                     System.out.printf("p(%f) = %f\n", val, np.evaluate(val));
                     break;
                 case "add":
@@ -37,7 +41,7 @@ public class App {
                     Double x = safeParseDouble(terms[1]);
                     Double y = safeParseDouble(terms[2]);
                     if (x == null || y == null) {
-                        System.err.println("ERROR: both x and y coordinates must be real numbers!");
+                        System.err.println("[ERROR] Both x and y coordinates must be numeric");
                         continue;
                     }
                     np.addPoint(new Point(x, y));
